@@ -1,8 +1,8 @@
 public class Car {
+
 	public static final String SONATA = "Sonata";
 	public static final String GRANDEUR = "Grandeur";
 	public static final String GENESIS = "Genesis";
-	String tmp;
 	String productName;
 	public Car(String productName) {
 		this.productName = productName;
@@ -10,4 +10,5 @@ public class Car {
 	public String toString() {
 		return productName;
 	}
+
 }
