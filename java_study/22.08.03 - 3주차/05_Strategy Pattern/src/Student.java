@@ -26,7 +26,18 @@ public class Student {
 
 	public void showGradeInfo() {
 		for (int i=0; i<subjectList.size(); ++i) {
-			System.out.println("학생 "+studentName+"의 "+subjectList.get(i).getName());
+			Grade grade = null;
+			if (subjectList.get(i).isMajorCode())
+				grade = new MajorGrade();
+			else
+				grade = new NotMajorGrade();
+			System.out.print("학생 "+studentName+"의 ");
+			System.out.print(subjectList.get(i).getName());
+			System.out.print(" 과목 성적은 ");
+			System.out.print(subjectList.get(i).getScorePoint());
+			System.out.print("점 이고, 학점은 ");
+			System.out.print(grade.grading(subjectList.get(i)));
+			System.out.println(" 입니다.");
 		}
 	}
 }
